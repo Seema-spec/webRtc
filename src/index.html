@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta itemprop="description" content="Client-side WebRTC code samples">
+    <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
+    <meta itemprop="name" content="WebRTC code samples">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+
+    <base target="_blank">
+
+    <title>getUserMedia</title>
+
+    <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../css/main.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+        <p>Get available audio, video sources and audio output devices from <code>mediaDevices.enumerateDevices()</code>
+            then set the source for <code>getUserMedia()</code> using a <code>deviceId</code> constraint.</p>
+        <p><b>Note:</b> without permission, the browser will restrict the available devices to at most one per type.</p>
+        <div class="select">
+            <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+        </div>
+    
+        <div class="select">
+            <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+        </div>
+    
+        <div class="select">
+            <label for="videoSource">Video source: </label><select id="videoSource"></select>
+        </div>
+        
+        <video id="gum-local" autoplay playsinline></video>
+        <button id="showVideo"  onclick="myFunction()">Open camera</button>
+        <button id="ScreenShots"  onclick="screenShots()">screenshot</button>
+        <canvas></canvas>
+        <div id="errorMsg"></div>
+    
+        <p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
+    
+        <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
+    
+        <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in
+            global scope, so you can inspect it from the console.</p>
+
+    </div>
+    
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script src="../src/index.js"></script>
+    
+    </body>
+</html>
